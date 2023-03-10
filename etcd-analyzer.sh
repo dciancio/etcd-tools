@@ -115,7 +115,7 @@ analyze_members() {
     echo -e "Found $($CLIENT logs $i -c etcd -n $ETCDNS|grep 'leader changed'|wc -l) took too long due to leader changed messages"
     echo -e "Found $($CLIENT logs $i -c etcd -n $ETCDNS|grep 'elected leader'|wc -l) leader changed messages"
     echo -e ""
-    echo -e "LAST COMPACTIONS: \n$($CLIENT logs $i -c etcd -n $ETCDNS|grep compaction|tail -8|cut -d ':' -f10|cut -c 2-13)"
+    echo -e "Time taken for recent compactions: \n$($CLIENT logs $i -c etcd -n $ETCDNS|grep compaction|tail -8|cut -d ':' -f10|cut -c 2-13)"
     echo -e ""
     echo -e "---------------------"
     echo -e ""
